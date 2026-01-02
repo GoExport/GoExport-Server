@@ -51,13 +51,12 @@ chmod -R 775 \
 # -----------------------------------------------------------------------------
 # GoExport Binary Check
 # -----------------------------------------------------------------------------
-GOEXPORT_BIN="/var/www/html/bin/goexport/goexport"
+GOEXPORT_BIN="/var/www/html/bin/goexport/GoExport_CLI"
 
 if [ -f "$GOEXPORT_BIN" ]; then
     echo "[✓] GoExport binary present"
 else
     echo "[!] WARNING: GoExport binary not found at $GOEXPORT_BIN"
-    echo "[!] The binary should be installed during Docker build"
 fi
 
 # -----------------------------------------------------------------------------

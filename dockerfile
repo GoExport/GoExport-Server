@@ -224,7 +224,8 @@ RUN mkdir -p /var/www/html/bin/goexport \
     && wget -q https://github.com/GoExport/GoExport/releases/latest/download/goexport_linux_portable_amd64.tar.gz \
     && tar -xzf goexport_linux_portable_amd64.tar.gz \
     && rm goexport_linux_portable_amd64.tar.gz \
-    && chmod +x goexport 2>/dev/null || true
+    && mv goexport GoExport_CLI 2>/dev/null || true \
+    && chmod +x GoExport_CLI 2>/dev/null || true
 
 # =============================================================================
 # Permissions & Storage
