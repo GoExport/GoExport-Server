@@ -49,23 +49,15 @@ chmod -R 775 \
     /var/www/html/bootstrap/cache
 
 # -----------------------------------------------------------------------------
-# GoExport Binary Download
+# GoExport Binary Check
 # -----------------------------------------------------------------------------
-echo "[*] Checking GoExport binary..."
+GOEXPORT_BIN="/var/www/html/bin/goexport/goexport"
 
-GOEXPORT_DIR="/var/www/html/bin/goexport"
-GOEXPORT_BIN="$GOEXPORT_DIR/goexport"
-
-if [ ! -f "$GOEXPORT_BIN" ]; then
-    echo "[*] Downloading GoExport binary..."
-    cd "$GOEXPORT_DIR"
-    wget -q https://github.com/GoExport/GoExport/releases/latest/download/goexport_linux_portable_amd64.tar.gz
-    tar -xzf goexport_linux_portable_amd64.tar.gz
-    rm goexport_linux_portable_amd64.tar.gz
-    chmod +x goexport 2>/dev/null || true
-    echo "[✓] GoExport binary downloaded"
+if [ -f "$GOEXPORT_BIN" ]; then
+    echo "[✓] GoExport binary present"
 else
-    echo "[✓] GoExport binary already present"
+    echo "[!] WARNING: GoExport binary not found at $GOEXPORT_BIN"
+    echo "[!] The binary should be installed during Docker build"
 fi
 
 # -----------------------------------------------------------------------------
