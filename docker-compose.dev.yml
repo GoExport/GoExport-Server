@@ -26,9 +26,7 @@
 services:
   app:
     shm_size: 8g
-    build:
-      context: .
-      dockerfile: dockerfile
+    image: lexiandev/goexport-server:latest
     container_name: goexport-server
     restart: unless-stopped
     ports:

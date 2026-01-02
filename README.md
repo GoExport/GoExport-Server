@@ -2,6 +2,10 @@
 
 A Laravel-based server for GoExport video rendering with headless display support.
 
+[![Docker Hub](https://img.shields.io/docker/v/lexiandev/goexport-server?label=Docker%20Hub&logo=docker)](https://hub.docker.com/r/lexiandev/goexport-server)
+[![Docker Pulls](https://img.shields.io/docker/pulls/lexiandev/goexport-server?logo=docker)](https://hub.docker.com/r/lexiandev/goexport-server)
+[![Build and Publish](https://github.com/goexport/goexport-server/actions/workflows/docker-publish.yml/badge.svg)](https://github.com/goexport/goexport-server/actions/workflows/docker-publish.yml)
+
 ## Quick Start
 
 ### Production
