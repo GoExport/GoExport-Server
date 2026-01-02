@@ -1,0 +1,71 @@
+# =============================================================================
+# Docker Ignore File
+# =============================================================================
+
+# Git
+.git
+.gitignore
+.gitattributes
+.gitmodules
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Dependencies (will be installed in container)
+/vendor
+/node_modules
+
+# Environment files (use docker environment variables instead)
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Testing
+/tests
+phpunit.xml
+.phpunit.result.cache
+/coverage
+
+# Build artifacts
+/public/hot
+/public/storage
+/storage/*.key
+
+# Logs
+*.log
+/storage/logs/*
+!/storage/logs/.gitkeep
+
+# Cache
+/bootstrap/cache/*
+!/bootstrap/cache/.gitkeep
+/storage/framework/cache/*
+/storage/framework/sessions/*
+/storage/framework/views/*
+
+# Documentation
+*.md
+!README.md
+/docs
+
+# Development files
+docker-compose.override.yml
+.editorconfig
+
+# Data directory (local development only)
+/data
+
+# Temporary files
+*.tmp
+*.temp
+
+# binary files
+/bin
