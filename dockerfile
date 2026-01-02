@@ -219,12 +219,8 @@ RUN npm run build
 # =============================================================================
 # GoExport Binary Installation
 # =============================================================================
-ARG GOEXPORT_VERSION=v1.1.10
-RUN mkdir -p /var/www/html/bin/goexport \
-    && cd /var/www/html/bin/goexport \
-    && wget -q https://github.com/GoExport/GoExport/releases/latest/download/goexport_linux_portable_amd64.tar.gz \
-    && tar -xzf goexport_linux_portable_amd64.tar.gz \
-    && rm goexport_linux_portable_amd64.tar.gz
+# GoExport is downloaded at runtime in entrypoint.sh to reduce image size
+RUN mkdir -p /var/www/html/bin/goexport
 
 # =============================================================================
 # Permissions & Storage

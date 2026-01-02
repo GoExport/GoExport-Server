@@ -49,6 +49,26 @@ chmod -R 775 \
     /var/www/html/bootstrap/cache
 
 # -----------------------------------------------------------------------------
+# GoExport Binary Download
+# -----------------------------------------------------------------------------
+echo "[*] Checking GoExport binary..."
+
+GOEXPORT_DIR="/var/www/html/bin/goexport"
+GOEXPORT_BIN="$GOEXPORT_DIR/goexport"
+
+if [ ! -f "$GOEXPORT_BIN" ]; then
+    echo "[*] Downloading GoExport binary..."
+    cd "$GOEXPORT_DIR"
+    wget -q https://github.com/GoExport/GoExport/releases/latest/download/goexport_linux_portable_amd64.tar.gz
+    tar -xzf goexport_linux_portable_amd64.tar.gz
+    rm goexport_linux_portable_amd64.tar.gz
+    chmod +x goexport 2>/dev/null || true
+    echo "[✓] GoExport binary downloaded"
+else
+    echo "[✓] GoExport binary already present"
+fi
+
+# -----------------------------------------------------------------------------
 # Optional database wait
 # -----------------------------------------------------------------------------
 if [ -n "$DB_HOST" ] && [ -n "$DB_PORT" ]; then
